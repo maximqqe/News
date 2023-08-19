@@ -1,0 +1,26 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" xmlns:border="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+
+    <title>{% block title %}News{% endblock %}</title>
+
+</head>
+<body class="bg-light">
+    {% include 'inc/_nav.html' %}
+
+    <div class="container mt-3 text-white">
+        <h1 class = 'mt-5 pt-4 text-dark' align="center">{%block heading%}News{% endblock %}</h1>
+        <div class="row">
+            <div class="col-3">{% block sidebar%}SIDEBAR{% endblock %}</div>
+            <div class="col-9">{% block content%}CONTENT{% endblock %}</div>
+        </div>
+    </div>
+
+    <script src="'bootstrap/css/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+{%extends 'base.html' %}
+{% block heading%}{{heading}}{% endblock %}
+{% block sidebar%}{%include 'inc/_sidebar.html' %}{% endblock %}
+{% block content%}
+
+    {% for item in news%}
+    <div class="card m-3 text-dark border border-2  rounded-4">
+        <div class="card-header" align="center"><a class="text-decoration-none text-dark fs-4" href="{{item.category.get_absolute_url}}">{{item.category|title}}</a></div>
+        {% if item.photo%}
+        <img src="{{ item.photo.url }}" class="card-img-top" alt="image" height="500">
+        {%endif%}
+        <div class="card-body">
+            <h4 class="card-title">{{item.title}}</h4>
+            <p class="card-text">{{item.content|truncatewords:50}}</p>
+            <a href="{{item.get_absolute_url}}" class="btn btn-primary bg-light text-info border border-2  rounded-pill">Read more...</a>
+        </div>
+        <div class="card-footer text-muted"><h6>{{item.created_at|date:"Y-m-d"}}</h6></div>
+    </div>
+    {% endfor %}
+
+{% endblock %}
+
+
+
+
+
+
+
+

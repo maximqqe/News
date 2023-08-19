@@ -1,0 +1,9 @@
+{% load news_tags%}
+
+<ul class="list-group mt-3 ">
+    {% get_categories as categories%}
+    {% for item in categories|dictsort:'title'%}
+    <li class="list-group-item"><a class="text-dark text-decoration-none fs-5" href="{{item.get_absolute_url}}">{{item.title|title}}</a>
+    </li>
+    {% endfor %}
+</ul>
