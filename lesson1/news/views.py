@@ -41,3 +41,4 @@ class CreateNews(CreateView):
     form_class = NewsForm
     template_name = 'news/add_news.html'
 
+

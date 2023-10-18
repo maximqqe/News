@@ -16,4 +16,4 @@ class CategoryAdmin(admin.ModelAdmin):
     search_fields = ('title',)
 
 admin.site.register(News, NewsAdmin)
-admin.site.register(Category,CategoryAdmin)
+admin.site.register(Category, CategoryAdmin)
